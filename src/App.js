@@ -3,8 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super()
+  contructor(){
     this.state = {
       user: '',
       name: '',
@@ -15,7 +14,7 @@ class App extends Component {
 
   changeHandler = (key, val) => {
     this.setState({
-      [key]: val
+      key: val
     })
   }
 
@@ -45,22 +44,22 @@ class App extends Component {
         <div>
             <div>
               <div>
-                name: <input name='name' onChange={(e) => this.changeHandler(e.target.name, e.target.value)} value={this.state.name}/>
+                name: <input name='name' onChange={(e) => this.changeHandler(e.target.name, e.target.value)} value={this.state.password}/>
               </div>
 
               <div>
-                password: <input type='password' name='password' onChange={(e) => this.changeHandler(e.target.name, e.target.value)} value={this.state.password}/>
+                password: <input type='password' name='password' onChange={(e) => this.changeHandler(e.target.name, e.target.value)} value={this.state.name}/>
               </div>
 
-              <button onClick={this.login}>Submit</button>
+              <button onClick={this.state.login}>Submit</button>
 
               {this.state.message}
             </div>
 
             <div>
-              <button onClick={this.getMyInfo}>Get My Info</button>
               <div> user id: {`${this.state.user.id}`}</div>
               <div> user name: {`${this.state.user.name || null}`}</div>
+              <button onClick={this.getMyInfo}>Get My Info</button>
             </div>
         </div>
       </div>
