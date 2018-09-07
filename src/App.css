@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+
+.App > div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 250px;
+  margin: 0 auto;
+}
+
+button {
+  background: grey;
+  color: white;
+}
